@@ -2,7 +2,7 @@
 package Model;
 
 
-import static Model.Funcoes2_DAO.resp;
+
 import View.InicioConsulta_GUI;
 import View.voo2565_GUI;
 import View.voo3676_GUI;
@@ -10,11 +10,8 @@ import View.voo3676_GUI;
 import javax.swing.JOptionPane;
 
 public class Funcoes2_DAO {
-
     public static String x="";
     public static int resp = 0;
-    
-    
     
     public static String[] assentosvoo1 = {"1[   ]", "2[   ]", "3[   ]", "4[   ]", "5[   ]", "6[   ]"};
     public static String[] assentosvoo2 = {"1[   ]", "2[   ]", "3[   ]", "4[   ]", "5[   ]", "6[   ]"};
@@ -36,6 +33,7 @@ public class Funcoes2_DAO {
 
             }else{
                 JOptionPane.showMessageDialog(null, "CODIGO NÃO ENCONTRADO");
+                new InicioConsulta_GUI().setVisible(true);
             }
             
             
@@ -50,16 +48,16 @@ public class Funcoes2_DAO {
     public static void reserva_1(String x){
         
         
-
-        if(assentosvoo1[0].equals("1[ x ]") && assentosvoo1[1].equals("2[ x ]") && assentosvoo1[2].equals("3[ x ]") && assentosvoo1[3].equals("4[ x ]") && assentosvoo1[4].equals("5[ x ]") && assentosvoo1[5].equals("6[ x ]")){
+        try{
+            if(assentosvoo1[0].equals("1[ x ]") && assentosvoo1[1].equals("2[ x ]") && assentosvoo1[2].equals("3[ x ]") && assentosvoo1[3].equals("4[ x ]") && assentosvoo1[4].equals("5[ x ]") && assentosvoo1[5].equals("6[ x ]")){
             
             JOptionPane.showMessageDialog(null, "Voo está lotado");
             new InicioConsulta_GUI().setVisible(true);
             
             
-        }else{
+            }else{
         
-            resp = Integer.parseInt(x);       
+                resp = Integer.parseInt(x);       
         
          
                 //ASSENTO N°1 DO VOO 2565
@@ -140,19 +138,27 @@ public class Funcoes2_DAO {
 
                    }
                 
-        }
+            }
+            
+        }catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, insira um número válido.");
+            
+        } 
+        
         
     }
     
     public static void reserva_2(String x){
         
-        if(assentosvoo1[0].equals("1[ x ]") && assentosvoo1[1].equals("2[ x ]") && assentosvoo1[2].equals("3[ x ]") && assentosvoo1[3].equals("4[ x ]") && assentosvoo1[4].equals("5[ x ]") && assentosvoo1[5].equals("6[ x ]")){
+        try{
+           if(assentosvoo2[0].equals("1[ x ]") && assentosvoo2[1].equals("2[ x ]") && assentosvoo2[2].equals("3[ x ]") && assentosvoo2[3].equals("4[ x ]") && assentosvoo2[4].equals("5[ x ]") && assentosvoo2[5].equals("6[ x ]")){
             
-            JOptionPane.showMessageDialog(null, "Voo está lotado");
-            new InicioConsulta_GUI().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Voo está lotado");
+                new InicioConsulta_GUI().setVisible(true);
             
             
-        }else{
+            }else{
             resp = Integer.parseInt(x);       
         
         
@@ -233,8 +239,17 @@ public class Funcoes2_DAO {
                }
 
     }
-}
-        }
+
+           
+            
+        }catch (NumberFormatException e) {
+            
+            JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, insira um número válido.");
+            
+        } 
+        
+}}
+        
             
         
         
