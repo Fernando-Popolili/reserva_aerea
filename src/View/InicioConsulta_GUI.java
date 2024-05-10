@@ -64,7 +64,7 @@ public class InicioConsulta_GUI extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(102, 204, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("VOO 3676\nORIGEM: SÃO PAULO - SP\nDESTINO: XIQUE XIQUE - BH\nHORARIO: 18H45\n");
+        jTextArea1.setText("VOO 3676\nORIGEM: SÃO PAULO - SP\nDESTINO: XIQUE XIQUE - BA\nHORARIO: 18H45\n");
         jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(jTextArea1);
 
